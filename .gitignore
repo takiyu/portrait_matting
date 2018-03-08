@@ -1,0 +1,8 @@
+*__pycache__
+data
+*.swp
+*.swo
+*.swm
+*.swn
+*.pyc
+*.npz

@@ -1,0 +1,8 @@
+{
+    "img_raw_dir": "data/img_raw",
+    "img_crop_dir": "data/img_crop",
+    "img_mask_dir": "data/img_mask",
+    "org_imgurl_filepath": "data_original/alldata_urls.txt",
+    "org_crop_filepath": "data_original/crop.txt",
+    "org_mask_dir": "data_original/images_mask"
+}
