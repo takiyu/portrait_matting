@@ -1,8 +1,10 @@
 *__pycache__
 data
+result*
 *.swp
 *.swo
 *.swm
 *.swn
 *.pyc
 *.npz
+*.dat

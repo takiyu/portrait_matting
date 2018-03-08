@@ -5,7 +5,7 @@ datefmt = '%Y/%m/%d %H:%M:%S'
 
 # default log format
 default_fmt = logging.Formatter('[%(asctime)s.%(msecs)03d] %(levelname)s '
-                                '(%(process)d) %(name)s : %(message)s',
+                                '(%(process)d) %(name)s\t: %(message)s',
                                 datefmt=datefmt)
 
 # set up handler

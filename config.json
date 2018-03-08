@@ -2,7 +2,14 @@
     "img_raw_dir": "data/img_raw",
     "img_crop_dir": "data/img_crop",
     "img_mask_dir": "data/img_mask",
+    "img_mean_mask_dir": "data/img_mean_mask",
+    "img_mean_grid_dir": "data/img_mean_grid",
+    "img_alpha_dir": "data/img_alpha",
+    "img_alpha_weight_dir": "data/img_alpha_weight",
+    "img_trimap_dir": "data/img_trimap",
     "org_imgurl_filepath": "data_original/alldata_urls.txt",
     "org_crop_filepath": "data_original/crop.txt",
-    "org_mask_dir": "data_original/images_mask"
+    "org_mask_dir": "data_original/images_mask",
+    "face_predictor_filepath": "shape_predictor_68_face_landmarks.dat",
+    "mean_mask_filepath": "data/mean_mask.npz"
 }

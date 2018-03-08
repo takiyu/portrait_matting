@@ -1,11 +1,20 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# -----------------------------------------------------------------------------
+#
+# Prepare for Portrait FCN.
+#
+#   Paper's dataset will be downloaded and converted for training.
+#
+# -----------------------------------------------------------------------------
+
 import argparse
 import os
+import cv2
+import glob
 import urllib.request
 import PIL.Image
-import imageio
 import scipy.io
 
 # modules
@@ -80,12 +89,12 @@ def crop_img(img_name, src_dir, dst_dir, crop_rect, img_size):
         return
 
     logger.info('Crop "%s" to "%s"', src_path, dst_path)
-    img = PIL.Image.open(src_path)
-    area = (int(crop_rect[2]), int(crop_rect[0]), int(crop_rect[3]),
-            int(crop_rect[1]))
-    img = img.crop(area)
-    img = img.resize(img_size)
-    img.save(dst_path)
+    img = cv2.imread(src_path)
+    x0, y0 = int(crop_rect[2]), int(crop_rect[0])
+    x1, y1 = int(crop_rect[3]), int(crop_rect[1])
+    img = img[y0:y1, x0:x1, :]
+    img = cv2.resize(img, img_size)
+    cv2.imwrite(dst_path, img)
 
 
 def parse_mask(mask_name, src_dir, img_name, dst_dir):
@@ -102,7 +111,7 @@ def parse_mask(mask_name, src_dir, img_name, dst_dir):
     logger.info('Parse mask "%s" to "%s"', src_path, dst_path)
     img = scipy.io.loadmat(src_path)['mask']
     img *= 255  # [0:1] -> [0:255]
-    imageio.imwrite(dst_path, img)
+    cv2.imwrite(dst_path, img)
 
 
 def main():
