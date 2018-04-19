@@ -27,7 +27,8 @@ log_initializer.set_root_level(INFO)
 logger = getLogger(__name__)
 
 
-def compute_trimap(name, src_dir, dst_dir, open_size=10, alpha_margin=10):
+def compute_trimap_from_alpha(name, src_dir, dst_dir, open_size=10,
+                              alpha_margin=10):
     src_path = os.path.join(src_dir, name)
     if not os.path.exists(src_path):
         logger.error('"%s" dose not exist', src_path)
@@ -79,7 +80,8 @@ def main():
     logger.info('Compute weight matrix for each image')
     os.makedirs(config.img_trimap_dir, exist_ok=True)
     for name in names:
-        compute_trimap(name, config.img_alpha_dir, config.img_trimap_dir)
+        compute_trimap_from_alpha(name, config.img_alpha_dir,
+                                  config.img_trimap_dir)
 
 
 if __name__ == '__main__':

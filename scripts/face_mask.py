@@ -135,7 +135,8 @@ class FaceMasker(object):
             return None
 
         # Mask
-        mask = _align_face_projection(self.mean_mask, self.mean_lmk, lmk)
+        mask = _align_face_projection(self.mean_mask, self.mean_lmk, lmk,
+                                      (img.shape[1], img.shape[0]))
 
         # Grid image
         size_y, size_x = mask.shape
