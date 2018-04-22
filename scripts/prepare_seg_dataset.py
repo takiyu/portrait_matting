@@ -55,7 +55,10 @@ def download_img(url, img_name, base_dir):
         return
 
     logger.info('Download to "%s"', img_path)
-    urllib.request.urlretrieve(url, img_path)
+    try:
+        urllib.request.urlretrieve(url, img_path)
+    except urllib.error.HTTPError:
+        logger.warin('Failed to download')
 
 
 def load_crop_rects(filepath):
