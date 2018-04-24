@@ -11,9 +11,9 @@ import chainer
 # modules
 import log_initializer
 import config
-from face_mask import FaceMasker
-import models
-import transforms
+from .face_mask import FaceMasker
+from . import models
+from . import transforms
 
 # logging
 from logging import getLogger, INFO
