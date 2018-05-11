@@ -71,6 +71,6 @@ First column is input image. Second column is output alpha mask. Third column is
 <img src="https://raw.githubusercontent.com/takiyu/portrait_matting/master/sample_images/color_5.jpg" width="250" /> <img src="https://raw.githubusercontent.com/takiyu/portrait_matting/master/sample_images/alpha_5.jpg" width="250" /> <img src="https://raw.githubusercontent.com/takiyu/portrait_matting/master/sample_images/color_vis_5.jpg" width="250" />
 
 ## ToDo ##
-- [ ] Collect more data (10000 - 20000 images).
+- [ ] Collect more data.
 - [ ] Seek more effective training method about matting layer.
 - [ ] Tune hyper parameters automatically.
