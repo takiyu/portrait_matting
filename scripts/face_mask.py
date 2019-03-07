@@ -7,7 +7,7 @@ import urllib.request
 import numpy as np
 
 # modules
-from .face_detector import FaceDetector
+from face_detector import FaceDetector
 
 # logging
 from logging import getLogger, NullHandler
